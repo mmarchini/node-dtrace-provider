@@ -1,6 +1,3 @@
-#include <nan.h>
-#include <node_object_wrap.h>
-
 extern "C" {
 #include <usdt.h>
 }
@@ -8,6 +5,9 @@ extern "C" {
 #include <sys/dtrace.h>
 #include <sys/types.h>
 #include <sys/mman.h>
+
+#include <nan.h>
+#include <node_object_wrap.h>
 
 #include <errno.h>
 #include <string.h>

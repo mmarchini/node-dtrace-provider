@@ -1,13 +1,13 @@
 {
     'conditions': [
-        ['OS=="mac" or OS=="solaris" or OS=="freebsd"', {
+        ['OS=="mac" or OS=="solaris" or OS=="freebsd" or OS=="linux"', {
             'conditions' : [
                 ['OS=="mac" or OS=="solaris"', {
                     'variables': {
                         'escaped_root': '<!(printf %q "<(module_root_dir)")',
                     }
                 }],
-                ['OS=="freebsd"', {
+                ['OS=="freebsd" or OS=="linux"', {
                     'variables' : {
                         'escaped_root': '<!(printf %s "<(module_root_dir)")'
                     }
@@ -31,6 +31,16 @@
                                  'libusdt',
                                  '<!(node -e "require(\'nan\')")',
                               ]
+                            }
+                        ],
+                        ['OS=="linux"',
+                            { 'include_dirs': [
+                                '/usr/include/x86_64-linux-gnu/',
+                                '/dtrace/uts/common',
+                                '/dtrace/linux',
+                                 '/libusdt',
+                                 '<!(node -e "require(\'nan\')")',
+                              ],
                             }
                         ],
                         ['OS=="freebsd"',

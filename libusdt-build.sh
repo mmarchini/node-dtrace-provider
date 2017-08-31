@@ -31,4 +31,4 @@ fi
 
 # Build.
 #
-$MAKE -C libusdt clean all
+$MAKE -C /libusdt clean all
