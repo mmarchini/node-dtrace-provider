@@ -2,7 +2,9 @@ extern "C" {
 #include <usdt.h>
 }
 
+#ifndef __linux__
 #include <sys/dtrace.h>
+#endif
 #include <sys/types.h>
 #include <sys/mman.h>
 

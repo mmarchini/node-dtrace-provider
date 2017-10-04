@@ -32,6 +32,7 @@ if (!DTraceProvider) {
      */
     if (process.platform === 'darwin' ||
         process.platform === 'sunos' ||
+        process.platform === 'linux' ||
         process.platform === 'freebsd') {
         console.error(err);
     }

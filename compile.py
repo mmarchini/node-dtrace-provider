@@ -35,11 +35,11 @@
                         ],
                         ['OS=="linux"',
                             { 'include_dirs': [
-                                '/usr/include/x86_64-linux-gnu/',
-                                '/dtrace/uts/common',
-                                '/dtrace/linux',
-                                 '/libusdt',
+                                 'libusdt',
                                  '<!(node -e "require(\'nan\')")',
+                              ],
+                              'libraries': [
+                                '-lstapsdt',
                               ],
                             }
                         ],
@@ -55,10 +55,10 @@
                         ]
                     ],
                     'dependencies': [
-                        'libusdt'
+                        'libusdt',
                     ],
                     'libraries': [
-                        '-L<(escaped_root)/libusdt -l usdt'
+                        '-L<(escaped_root)/libusdt -l usdt',
                     ]
                 },
                 {
