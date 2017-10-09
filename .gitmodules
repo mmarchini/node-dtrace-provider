@@ -1,3 +1,4 @@
 [submodule "libusdt"]
 	path = libusdt
-	url = https://github.com/chrisa/libusdt
+	url = https://github.com/mmarchini/libusdt
+	branch = libstapsdt-support
